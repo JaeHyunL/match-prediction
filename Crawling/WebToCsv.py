@@ -33,7 +33,7 @@ def race():
         raceAll = raceAll.rstrip('\n')
         raceAll = raceAll.strip('\n')
         raceAll = raceAll.replace('\n', ',')
-
+        raceAll = raceAll.split(',')
         # wr.writerow(raceAll)
         # time.sleep(1)
 
@@ -45,7 +45,7 @@ def race():
         raceTerran = raceTerran.rstrip('\n')
         raceTerran = raceTerran.strip('\n')
         raceTerran = raceTerran.replace('\n', ',')
-
+        raceTerran = raceTerran.split(',')
         # wr.writerow(raceTerran)
         # time.sleep(1)
 
@@ -54,10 +54,9 @@ def race():
         raceToss = raceToss.replace("[", '')
         raceToss = raceToss.replace("]", '')
         raceToss = raceToss.replace("토스", '')
-        raceToss = raceToss.rstrip('\n')
         raceToss = raceToss.strip('\n')
         raceToss = raceToss.replace('\n', ',')
-
+        raceToss = raceToss.split(',')
         # wr.writerow(raceToss)
         # time.sleep(1)
 
@@ -70,10 +69,11 @@ def race():
         raceZerg = raceZerg.strip('\n')
 
         raceZerg = raceZerg.replace('\n', ',')
+        raceZerg = raceZerg.split(',')
         # wr.writerow(raceZerg)
 
-        wr.writerow([bjName, 'userID = ' + str(i), raceAll,
-                     raceTerran, raceToss, raceZerg])
+        wr.writerow([bjName, 'userID = ' + str(i), raceAll[0],raceAll[1],
+                     raceTerran[0],raceTerran[1], raceToss[0],raceToss[1], raceZerg[0],raceZerg[1]])
         print(str(i) + '번째까지 정상실행 . ')
 
 
